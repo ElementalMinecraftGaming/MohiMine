@@ -75,7 +75,7 @@ public class MohiMine extends PluginBase implements Listener {
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (!(sender instanceof Player)) {
-			sender.sendMessage(new TranslationContainer(TextFormat.RED + "%commands.generic.ingame"));
+			sender.sendMessage(TextFormat.RED + "%commands.generic.ingame");
 			return true;
 		}
 		if (command.getName().equalsIgnoreCase("mine")) {
