@@ -227,7 +227,7 @@ public class MohiMine extends PluginBase implements Listener {
 		mine.put("probability", this.calcedSetting);
 		this.mineDB.put(name, mine);
 		this.mineCalc();
-		this.saveDB(false);
+		this.saveDB(true);
 		this.getServer().getScheduler().scheduleAsyncTask(new MineTask());
 		return TextFormat.BLUE + "[MohiMine]" + " " + "성공적으로 광산을 설정했습니다.";
 	}
@@ -239,27 +239,27 @@ public class MohiMine extends PluginBase implements Listener {
 	 * @param name
 	 * @return
 	 */
-	public String setMine(Position pos1, Position pos2, String name) {
-		if (!(pos1.getLevel().getFolderName().equalsIgnoreCase(pos2.getLevel().getFolderName()))) {
-			return TextFormat.RED + "[MohiMine]" + " " + "잘못된 위치입니다.";
-		}
-		if (this.mineDB.containsKey(name)) {
-			return TextFormat.RED + "[MohiMine]" + " " + "이미 존재하는 광산 입니다.";
-		}
-		if (pos1 == null || pos2 == null) {
-			return TextFormat.RED + "[MohiMine]" + " " + "pos1 또는 pos2가 설정되어있지 않습니다.";
-		}
-		ConfigSection mine = new ConfigSection();
-		mine.put("pos1", pos1.level.getFolderName() + ":" + (int) pos1.x + ":" + (int) pos1.y + ":" + (int) pos1.z);
-		mine.put("pos2", pos2.level.getFolderName() + ":" + (int) pos2.x + ":" + (int) pos2.y + ":" + (int) pos2.z);
-		mine.put("probability", this.defaultProbability);
-		this.mineDB.put(name, mine);
-		this.mineCalc();
-		this.saveDB(false);
-		this.getServer().getScheduler().scheduleAsyncTask(new MineTask());
-		return TextFormat.BLUE + "[MohiMine]" + " " + "성공적으로 광산을 설정했습니다.";
-
-	}
+//	public String setMine(Position pos1, Position pos2, String name) {
+//		if (!(pos1.getLevel().getFolderName().equalsIgnoreCase(pos2.getLevel().getFolderName()))) {
+//			return TextFormat.RED + "[MohiMine]" + " " + "잘못된 위치입니다.";
+//		}
+//		if (this.mineDB.containsKey(name)) {
+//			return TextFormat.RED + "[MohiMine]" + " " + "이미 존재하는 광산 입니다.";
+//		}
+//		if (pos1 == null || pos2 == null) {
+//			return TextFormat.RED + "[MohiMine]" + " " + "pos1 또는 pos2가 설정되어있지 않습니다.";
+//		}
+//		ConfigSection mine = new ConfigSection();
+//		mine.put("pos1", pos1.level.getFolderName() + ":" + (int) pos1.x + ":" + (int) pos1.y + ":" + (int) pos1.z);
+//		mine.put("pos2", pos2.level.getFolderName() + ":" + (int) pos2.x + ":" + (int) pos2.y + ":" + (int) pos2.z);
+//		mine.put("probability", this.defaultProbability);
+//		this.mineDB.put(name, mine);
+//		this.mineCalc();
+///		this.saveDB(false);
+//		this.getServer().getScheduler().scheduleAsyncTask(new MineTask());
+//		return TextFormat.BLUE + "[MohiMine]" + " " + "성공적으로 광산을 설정했습니다.";
+//
+	//}
 
 	/**
 	 *
