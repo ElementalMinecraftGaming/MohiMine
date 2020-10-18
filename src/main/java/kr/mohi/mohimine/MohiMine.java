@@ -95,10 +95,6 @@ public class MohiMine extends PluginBase implements Listener {
 				return true;
 			}
 			if (args[0].equalsIgnoreCase("set")) {
-				if (args[1] == null) {
-					this.alert(sender, "/mine set <광산 이름>");
-					return true;
-				}
 				this.plainMessage(sender, this.setMine(player, args[1]));
 				return true;
 			}
